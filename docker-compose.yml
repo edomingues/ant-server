@@ -1,0 +1,16 @@
+services:
+  ant-server:
+    image: node:23
+    working_dir: /app
+    volumes:
+      - ./functions:/app
+      - ./public:/app/public
+      - ./service-account.json:/app/service-account.json
+    ports:
+      - "8080:8080"
+    command: >
+      sh -c "npm install && node index.js"
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/service-account.json
+    env_file:
+      - .env

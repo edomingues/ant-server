@@ -1,0 +1,26 @@
+{
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "@google-cloud/local-auth": "^2.1.0",
+    "express": "^5.1.0",
+    "googleapis": "^105.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0"
+  },
+  "private": true,
+  "type": "module"
+}
